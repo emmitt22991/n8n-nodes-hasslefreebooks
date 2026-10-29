@@ -27,7 +27,7 @@ export class HassleFreeBooksTrigger implements INodeType {
 		group: ['trigger'],
 		version: 1,
 		subtitle: '={{$parameter["events"].join(", ")}}',
-		description: 'Starts the workflow when an invoice or bill is paid, or an invoice or journal entry is created',
+		description: 'Starts the workflow when an invoice or bill is paid, a payout reaches the bank, or an invoice or journal entry is created',
 		defaults: {
 			name: 'HassleFreeBooks Trigger',
 		},
@@ -75,6 +75,11 @@ export class HassleFreeBooksTrigger implements INodeType {
 						name: 'Invoice Paid',
 						value: 'invoice.paid',
 						description: 'An invoice was paid in full',
+					},
+					{
+						name: 'Payout Matched',
+						value: 'payout.matched',
+						description: 'A payment processor payout was matched to its bank deposit',
 					},
 					{
 						name: 'Transaction Created',

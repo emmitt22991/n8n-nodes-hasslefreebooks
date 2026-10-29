@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-hasslefreebooks",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "n8n nodes for HassleFreeBooks small-business accounting: create contacts, invoices, bills and expenses, record payments, and trigger workflows when invoices and bills are paid.",
 	"license": "MIT",
 	"homepage": "https://hasslefreebooks.com/docs/api",
