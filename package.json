@@ -1,0 +1,56 @@
+{
+	"name": "n8n-nodes-hasslefreebooks",
+	"version": "0.1.0",
+	"description": "n8n nodes for HassleFreeBooks small-business accounting: create contacts, invoices, bills and expenses, record payments, and trigger workflows when invoices and bills are paid.",
+	"license": "MIT",
+	"homepage": "https://hasslefreebooks.com/docs/api",
+	"keywords": [
+		"n8n-community-node-package",
+		"hasslefreebooks",
+		"accounting",
+		"bookkeeping",
+		"invoices"
+	],
+	"author": {
+		"name": "HassleFreeBooks",
+		"email": "support@hasslefreebooks.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/emmitt22991/n8n-nodes-hasslefreebooks.git"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"test": "npm run build && node test/run.mjs",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/HassleFreeBooksApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/HassleFreeBooks/HassleFreeBooks.node.js",
+			"dist/nodes/HassleFreeBooksTrigger/HassleFreeBooksTrigger.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "0.51.5",
+		"eslint": "9.32.0",
+		"prettier": "3.6.2",
+		"release-it": "^21.1.0",
+		"typescript": "5.9.2"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}
